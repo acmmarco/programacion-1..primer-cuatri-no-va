@@ -4,7 +4,7 @@
 int main()
 {
     float precio;
-    float descuento;
+    int descuento;
     float precioDescuento;
     float precioIva;
     int iva;
@@ -13,16 +13,16 @@ int main()
     printf("ingrese precio/n");
     scanf("%f", &precio);
     printf("ingrese porcentaje descuento/n");
-    scanf("%f", &descuento);
+    scanf("%d", &descuento);
 
-    descuento=(precio * descuento)/100;
+    descuento=precio * descuento/100;
     precioDescuento=precio - descuento;
     iva= 21;
-    precioIva= (precioDescuento * 21) /100;
-    precioTotal=precioDescuento-precioIva;
+    precioIva= precioDescuento * 21 /100;
+    precioTotal=precioDescuento+precioIva;
 
 
-    printf("el descuento es de: %.0f\n , el precio con el descuento es:%.0f , el iva es:%d y el precio total es:%.0f",descuento, precioDescuento, iva , precioTotal );
+    printf("el descuento es de: %d\n , el precio con el descuento es:%.1f , el precioIva es:%.2f y el precio total es:%.1f",descuento, precioDescuento, precioIva , precioTotal );
     return 0;
 }
 /*Bienvenidos.
