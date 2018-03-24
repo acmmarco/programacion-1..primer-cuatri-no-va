@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 int main()
 {
+    char sexo;
+    int edad;
     float nota;
     float acumulador=0;
     float contador;
@@ -14,13 +17,31 @@ int main()
     for(contador=0; contador<5; contador++)
         {
             printf("ingrese nota");
-            scanf("%f", &nota);
+            scanf("%d", &nota);
             acumulador=acumulador+nota;
+
             while(nota<0 || nota>10)
                 {
                     printf("ERROR ingrese nota");
                     scanf("%f", &nota);
                 }
+            printf("ingrese edad");
+            scanf("%d", &edad);
+            while(edad<=0)
+                {
+                    printf("ERROR ingrese edad");
+                    scanf("%d", &edad);
+                }
+
+            printf("ingrese sexo f o m");
+            scanf("%c", &sexo);
+
+            while(sexo!='f' && sexo!='m')
+                {
+                    printf("ERROR ingrese sexo f o m");
+                    scanf("%c", &sexo);
+                }
+
     if(contador==1)
         {
             maximo=nota;

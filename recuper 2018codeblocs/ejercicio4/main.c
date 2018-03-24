@@ -14,20 +14,24 @@ int main()
 
     if(numero1==numero2)
         {
-            resultado=numero1 + numero2;
+            printf("%d%d", numero1, numero2);//concatenar
         }
-        else
-        {
-            if(numero1>numero2)
+        else if(numero1>numero2)
                 {
-                    resultado=numero1 / numero2;
-                }
+                    if(numero2 != 0)
+                    resultado= (float) numero1 / numero2;
+                }case "sabado" :
                 else
                 {
-                    resultado=numero1*numero2;
-                }
+                    resultado=numero1+numero2;
 
-        }
+                    printf("la suma es %d", resultado);
+
+                    if(suma<50)
+                        {
+                            printf("y es menor a 50");
+                        }
+                }
 
 
 
