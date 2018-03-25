@@ -22,17 +22,17 @@ int main()
             printf("raspando");
             if(nota>5)
                 {
-                 printf("debes esforzarte mas.\n");
+                 printf(" debes esforzarte mas.\n");
                 }
                 break;
         case 7 :
         case 8 :
         case 9 :
         case 10 :
-            printf("aprobo");
+            printf(" aprobo");
             if(nota>8)
                 {
-                    printf("muy bien\n");
+                    printf(" muy bien\n");
                 }
                 break;
         default:

@@ -1,71 +1,82 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 int main()
 {
     char sexo;
     int edad;
-    float nota;
-    float acumulador=0;
-    float contador;
+    int nota;
+    int acumuladorNotas=0;
+    int contador;
     float promedio;
-    float maximo;
-    float minimo;
-    float contadorNotaMayor6=0;
+    int contadorNotaMayor6=0;
+    int notaMasBaja;
+    int flag=0;
+    char sexoMasBajo;
+    int varMayor18Aprobado6=0;
+    char EdadMasJoven;
+    int notaMasJoven;
+    char sexoMasjoven;
+    int flagMasJoven=0;
 
-    for(contador=0; contador<5; contador++)
+    for(contador=0; contador<3; contador++)
         {
-            printf("ingrese nota");
+            printf("ingrese nota\n");
             scanf("%d", &nota);
-            acumulador=acumulador+nota;
-
             while(nota<0 || nota>10)
                 {
-                    printf("ERROR ingrese nota");
-                    scanf("%f", &nota);
+                    printf("ingrese nota\n");
+                    scanf("%d", &nota);
                 }
-            printf("ingrese edad");
+
+            printf("ingresar edad\n");
             scanf("%d", &edad);
-            while(edad<=0)
+            while(edad<0)
                 {
-                    printf("ERROR ingrese edad");
+                    printf("ERRORingresar edad\n");
                     scanf("%d", &edad);
                 }
 
-            printf("ingrese sexo f o m");
+            printf("ingrese sexo f o m\n");
             scanf("%c", &sexo);
-
-            while(sexo!='f' && sexo!='m')
+            sexo=tolower(sexo);
+            while(sexo!='f' && sexo!= 'm')
                 {
-                    printf("ERROR ingrese sexo f o m");
                     scanf("%c", &sexo);
+                    sexo=tolower(sexo);
+                }
+            if(nota<notaMasBaja || flag==0)
+                {
+                    notaMasBaja=nota;
+                    sexoMasBajo=sexo;
+                    flag=1;
+                }
+            if(nota>5&& edad>18 && sexo== 'm')
+                {
+                    varMayor18Aprobado6++;
+                }
+            if(edad<EdadMasJoven || flagMasJoven==0)
+                {
+                    EdadMasJoven=edad;
+                    notaMasJoven=nota;
+                    sexoMasjoven=sexo;
+                    flagMasJoven=1;
+
                 }
 
-    if(contador==1)
-        {
-            maximo=nota;
-            minimo=nota;
-        }
-        else
-        {
-            if(nota>maximo)
-            {
-                maximo=nota;
-            }
-            if(nota<minimo)
-            {
-                minimo=nota;
-            }
-        }
-        if(nota>6)
-            {
-                contadorNotaMayor6++;
-            }
+
+            acumuladorNotas=acumuladorNotas+nota;
+
+
+
+
+
         }//final for
-    promedio=acumulador/contador;
-    printf("el promedio de las notas es:%.2f\n el minimo es:%.2f /n el maximo es: %.2f /n cantidad de var mayor 6 es:%.2f",promedio, minimo , maximo,contadorNotaMayor6);
-    return 0;
+        promedio=(float)acumuladorNotas/contador;
+        printf("el promedio de las notas es: %.2f\n", promedio);
+        printf("la nota mas baja es: %d\n y el sexo es: %c\n",notaMasBaja,sexoMasBajo);
+        printf("la cantidad de varones mayores 18 y aprobados con 6 o mas : %d \n",varMayor18Aprobado6);
+        printf("El sexo y la nota del más joven: %d &d &c",EdadMasJoven,notaMasJoven,sexoMasjoven);
 }
 /*Realizar el algoritmo que permita el ingreso por prompt de las notas
 (validar entre 0 y 10),la edad y el sexo (validar el sexo “f” o “m”) de 5 alumnos,
