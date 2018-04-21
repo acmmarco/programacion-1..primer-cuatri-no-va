@@ -13,21 +13,16 @@ typedef struct
 
 void mostrarEmpleado(eEmpleado);
 eEmpleado cargarEmpleado();
+void mostrarEmpleados(eEmpleado gente[], int tam);
 
 int main()
 {
 
     eEmpleado plantel[4];
 
-    for(int i =0; i <4 ; i++)
-        {
-            plantel[i]=cargarEmpleado();
-        }
-    for(int i =0; i <4 ; i++)
-        {
-            printf("los datos ingresados son");
-            mostrarEmpleado(plantel[i]);
-        }
+   mostrarEmpleados(plantel,4);
+
+
    /* eEmpleado unEmpleado = {1234, "juan", 'm', 25000.50};
     eEmpleado otroEmpleado;
     eEmpleado emp3;
@@ -82,5 +77,13 @@ eEmpleado cargarEmpleado()
 
 
     return emp;
+}void mostrarEmpleados(eEmpleado gente[], int tam)
+void mostrarEmpleados(eEmpleado gente[], int tam)
+{
+    for (int i =0; i<tam; i++)
+        {
+            mostrarEmpleado(gente[i]);
+        }
 }
+
 
