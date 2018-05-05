@@ -25,6 +25,7 @@ void mostrarAlumnosConMaterias(eAlumno vecAlumno[], int tamAlumnos, eInscripcion
 void mostrarMateriasConCantidadDeInscriptos(eInscripcion ins[], int tamI, eMateria mat[], int tamM);
 int cantidadDeInscriptos(int materia, eInscripcion ins[], int tam);
 void mostrarMateriasConCantidadDeInscriptos(eInscripcion ins[], int tamI, eMateria mat[], int tamM);
+void mostrarMateriasConCantidadDeInscriptos(eInscripcion ins[], int tamI, eMateria mat[], int tamM);
 
 int main()
 {
@@ -32,9 +33,9 @@ int main()
     eAlumno alumnos[]= {{10, "Juan"},{20, "ana"},{30, "ella"},{40, "trozo"}};
     eInscripcion inscripciones[]= {{10,2},{10,1},{10,3},{20,2},{30,2},{30,1},{20,1}};
 
-    mostrarAlumnosConMaterias(alumnos,4 ,inscripciones,7 ,materias,4 );
-    mostrarMateriasConCantidadDeInscriptos(inscripciones, 7, materias,4);
-
+   // mostrarAlumnosConMaterias(alumnos,4 ,inscripciones,7 ,materias,4 );
+    //mostrarMateriasConCantidadDeInscriptos(inscripciones, 7, materias,4);
+    mostrarMateriasConSusAlumnos(alumnos,4 , inscripciones,7 , materias,4);
 
     return 0;
 }
@@ -89,4 +90,12 @@ int cantidadDeInscriptos(int materia, eInscripcion ins[], int tam)
                 }
         }
         return cantidad;
+}
+void mostrarMateriasConSusAlumnos(eMateria materia[], int tamMat, eInscripcion ins[], int tamIns, eAlumno alum[], int tamAlum)
+{
+    for(int i=0; i<tamMat; i++)
+        {
+            printf("%s \n", materia[i].descripcion);
+        }
+
 }
