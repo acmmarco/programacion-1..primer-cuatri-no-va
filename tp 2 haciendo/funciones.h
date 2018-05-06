@@ -8,7 +8,6 @@ typedef struct {
     int edad;
     int estado;
     int dni;
-    int isEmpty;
 
 }EPersona;
 
@@ -27,6 +26,7 @@ int obtenerEspacioLibre(EPersona lista[], int tam);
  * @param dni el dni a ser buscado en el array.
  * @return el indice en donde se encuentra el elemento que coincide con el parametro dni
  */
-int buscarPorDni(EPersona lista[],int tam, int dni);
+
+
 
 #endif // FUNCIONES_H_INCLUDED
