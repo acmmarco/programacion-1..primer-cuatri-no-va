@@ -2,16 +2,23 @@
 #define FUNCIONES_H_INCLUDED
 int menu();
 
-typedef struct {
+typedef struct
+{
 
     char nombre[50];
     int edad;
     int estado;
     int dni;
 
-}EPersona;
+} EPersona;
 
-
+int buscarPorDni(EPersona lista[],int tam, int dni);
+void inicializadorPersonas( EPersona vec[], int tam );
+void altaPersona(EPersona lista[], int tam);
+void mostrarPersonas(EPersona lista[], int tam);
+void bajaPersona(EPersona lista[], int tam);
+void ordenarPersonas(EPersona lista[], int tam);
+void graficosEdades(EPersona lista[], int tam);
 
 /**
  * Obtiene el primer indice libre del array.

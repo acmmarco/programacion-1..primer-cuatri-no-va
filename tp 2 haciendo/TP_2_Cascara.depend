@@ -19,14 +19,16 @@
 
 1525026559 c:\users\agusf\desktop\tp 2 haciendo\funciones.h
 
-1525641742 source:c:\users\agusf\desktop\programacion-1-master\tp 2 haciendo\libreria.c
+1525652063 source:c:\users\agusf\desktop\programacion-1-master\tp 2 haciendo\libreria.c
 	<stdio.h>
 	"funciones.h"
+	<string.h>
 
-1525647622 c:\users\agusf\desktop\programacion-1-master\tp 2 haciendo\funciones.h
+1525651969 c:\users\agusf\desktop\programacion-1-master\tp 2 haciendo\funciones.h
 
-1525647336 source:c:\users\agusf\desktop\programacion-1-master\tp 2 haciendo\main.c
+1525651899 source:c:\users\agusf\desktop\programacion-1-master\tp 2 haciendo\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
+	<string.h>
 
