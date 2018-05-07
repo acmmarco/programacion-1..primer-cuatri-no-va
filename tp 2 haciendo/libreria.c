@@ -11,6 +11,7 @@ int menu()
     printf("4- Imprimir grafico de edades\n\n");
     printf("5- Salir\n");
 
+
     scanf("%d",&opcion);
     return opcion;
 }
@@ -124,6 +125,7 @@ void altaPersona(EPersona lista[], int tam)
             lista[indice] = nuevoEmpleado;
 
             printf("\nalta exitosa !!!! \n\n");
+
 
         }
     }

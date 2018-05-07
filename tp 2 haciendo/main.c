@@ -33,6 +33,7 @@ int main()
         case 4:
             graficosEdades(persona, TAM);
             system("pause");
+            system("cls");
             break;
         case 5:
             seguir = 'n';
@@ -41,6 +42,7 @@ int main()
         default:
             printf("elija opcion del 1 al 5\n");
             system("pause");
+            system("cls");
         }
     }
 
