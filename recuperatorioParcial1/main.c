@@ -34,8 +34,10 @@ void modificacionProducto(eProducto vec[], int tamProduc, eProveedor proveedores
 
 int main()
 {
+
     eProducto producto[TAM];
     eProveedor proveedores[]= {{1, "coto"}, {2,"morres"}, {3, "fravega"}, {4, "nicart"}, {5, "potable"}, {6, "alectro"}};
+    inicializadorPersonas(producto, TAM);
     char seguir= 's';
     while(seguir=='s')
     {
