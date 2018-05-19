@@ -30,6 +30,8 @@ void bajaProducto(eProducto vec[], int tam, eProveedor proveedores[], int tamPro
 void modificacionProducto(eProducto vec[], int tamProduc, eProveedor proveedores[], int tamProv);
 int pedirProveedor(eProveedor proveedores[], int tam);
 int menuInformar();
+int cantidadDeProductos( eProducto product[], int tam);
+int totalImportes( eProducto product[], int tam);
 
 
 

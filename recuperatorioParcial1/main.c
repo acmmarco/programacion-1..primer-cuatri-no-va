@@ -6,8 +6,7 @@
 #define TAM 50
 #define TAMPROV 6
 
-int cantidadDeProductos( eProducto product[], int tam);
-int totalImportes( eProducto product[], int tam);
+void ordenar(eProducto prod[], int tam);
 int main()
 {
     eProducto producto[TAM];
@@ -66,7 +65,7 @@ int main()
             system("pause");
             break;
         case 6:
-            seguir = 'n';
+            ordenar(producto,TAM);
             system("pause");
             break;
         default:
@@ -79,70 +78,28 @@ int main()
     return 0;
 }
 
-int cantidadDeProductos( eProducto product[], int tam)
+void ordenar(eProducto prod[], int tam)
 {
-    int cantidad = 0;
-    int acumulador=0;
-
-    for (int i =0; i< tam; i++)
+    char aux[50];
+    for(int i=0; i<tam; i++)
     {
-        if (product[i].estado==0)
+        for(int j=0; i<tam; i++)
         {
-            acumulador = product[i].cantidad+ acumulador;
-        }
-    }
-    printf("\nla cantidad de productos es : %d\n", acumulador);
-
-
-    for (int i =0; i< tam; i++)
-    {
-        if (product[i].estado==0 && product[i].cantidad>10)//mayor
-        {
-            printf("productos con stock mayores a 10\n");
-            printf("%s ----------- %d----$%.2f\n\n", product[i].descripcionProduto,product[i].cantidad, product[i].importe);
-        }
-        if (product[i].estado==0 && product[i].cantidad<11)
-        {
-            printf("productos con stock menor a 11\n");
-            printf("%s ----------- %d----$%.2f\n\n", product[i].descripcionProduto,product[i].cantidad, product[i].importe);
+            if((strcmp(prod[i].descripcionProduto, prod[j].descripcionProduto))>0)
+            {
+                strcpy(aux, prod[i].descripcionProduto);
+                strcpy(prod[i].descripcionProduto,prod[j].descripcionProduto );
+                strcpy(prod[j].descripcionProduto, aux);
+            }
         }
     }
 
+    printf("lista de productos ordenas");
 
-    return cantidad;
+for(int i =0; i<tam; i++)
+    {
+        printf("%s ----------- %d----$%.2f\n\n", prod[i].descripcionProduto,prod[i].cantidad, prod[i].importe);
+        break;
+    }
 }
 
-int totalImportes( eProducto product[], int tam)
-{
-    int cantidad=0;
-    int acumulador=0;
-    float promedio;
-
-    for (int i =0; i< tam; i++)
-    {
-        if (product[i].estado==0)
-        {
-            cantidad++;
-            acumulador = product[i].importe+ acumulador;
-        }
-    }
-    promedio= acumulador/ cantidad;
-    printf("\nla cantidad de productos es : %d\n", acumulador);
-    printf("\nel promedio de los productos es : %.2f\n", promedio);
-
-    for (int i =0; i< tam; i++)
-    {
-        if (product[i].estado==0 && product[i].importe>promedio)
-        {
-            printf("productos mayores al promedio\n");
-            printf("%s ----------- %d----$%.2f\n\n", product[i].descripcionProduto,product[i].cantidad, product[i].importe);
-        }
-        if (product[i].estado==0 && product[i].importe<promedio)
-        {
-            printf("productos menores al promedio\n");
-            printf("%s ----------- %d----$%.2f\n\n", product[i].descripcionProduto,product[i].cantidad, product[i].importe);
-        }
-    }
-
-    return cantidad;
-}
