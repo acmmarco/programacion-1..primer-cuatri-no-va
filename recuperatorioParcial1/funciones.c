@@ -12,9 +12,11 @@ int menu()
     printf("1- Alta\n");
     printf("2- Baja\n");
     printf("3- Modificar\n");
-    printf("4- Listar\n");
+    printf("4- msotrar productos\n");
+    printf("--------------INFORMES---------------------\n");
     printf("5- informes\n");
-    printf("6- Total sueldos\n");
+    printf("--------------LISTADO----------------------\n");
+    printf("6- listados\n");
     printf("7- Empleados que mas ganan\n");
     printf("8- Mostrar empleados x sector\n");
     printf("9- Informar cuantos empleados hay en cada sector\n");

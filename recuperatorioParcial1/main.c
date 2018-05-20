@@ -7,6 +7,9 @@
 #define TAMPROV 6
 
 void ordenar(eProducto prod[], int tam);
+void mostrarProductosordenados(eProducto lista[], int tamProduc, eProveedor proveedores[],int tamProv);
+void proveedoresXproductos(eProducto prod[], int tampro, eProveedor provee[], int tamprov);
+
 int main()
 {
     eProducto producto[TAM];
@@ -65,7 +68,10 @@ int main()
             system("pause");
             break;
         case 6:
-            ordenar(producto,TAM);
+            mostrarProductosordenados(producto,TAM,proveedores,TAMPROV);
+            cantidadDeProductos(producto,TAM);
+            totalImportes(producto,TAM);
+            proveedoresXproductos(producto,TAM,proveedores,TAMPROV);
             system("pause");
             break;
         default:
@@ -78,28 +84,65 @@ int main()
     return 0;
 }
 
+
+
 void ordenar(eProducto prod[], int tam)
 {
-    char aux[50];
-    for(int i=0; i<tam; i++)
+
+    eProducto aux;
+
+    for(int i=0; i< tam-1; i++)
     {
-        for(int j=0; i<tam; i++)
+        for(int j=i +1; j< tam; j++)
         {
-            if((strcmp(prod[i].descripcionProduto, prod[j].descripcionProduto))>0)
+
+            if(strcmp(prod[i].descripcionProduto, prod[j].descripcionProduto)>0)
             {
-                strcpy(aux, prod[i].descripcionProduto);
-                strcpy(prod[i].descripcionProduto,prod[j].descripcionProduto );
-                strcpy(prod[j].descripcionProduto, aux);
+                aux = prod[i];
+                prod[i]= prod[j];
+                prod[j]= aux;
             }
+
         }
-    }
-
-    printf("lista de productos ordenas");
-
-for(int i =0; i<tam; i++)
-    {
-        printf("%s ----------- %d----$%.2f\n\n", prod[i].descripcionProduto,prod[i].cantidad, prod[i].importe);
-        break;
     }
 }
 
+void mostrarProductosordenados(eProducto lista[], int tamProduc, eProveedor proveedores[],int tamProv)
+{
+    system("cls");
+    printf("      ---Lista de productos ordenados---\n\n");
+    ordenar(lista,tamProduc);
+    printf("  codigo    descripcion    cantidad    importe ----  proveedores \n\n");
+    for(int i=0; i< tamProduc; i++)
+    {
+        if(lista[i].estado ==0)
+        {
+            mostrarProducto(lista[i], proveedores, tamProv);
+        }
+    }
+}
+
+void proveedoresXproductos(eProducto prod[], int tampro, eProveedor provee[], int tamprov)
+{
+
+    system("cls");
+    printf("---Listado productos por proveedores---\n\n");
+
+    for(int i=0; i< tamprov; i++)
+    {
+        printf("-- %s --\n\n", provee[i].descripcionProducto);
+
+        for(int j=0; j < tampro; j++)
+        {
+            if(prod[j].codigoProducto == provee[i].codigoProveedor)
+            {
+                mostrarProducto(prod[j], provee, tamprov);
+            }
+        }
+        printf("\n-----------------------------------------------------------\n");
+    }
+
+    printf("\n\n");
+    system("pause");
+
+}
