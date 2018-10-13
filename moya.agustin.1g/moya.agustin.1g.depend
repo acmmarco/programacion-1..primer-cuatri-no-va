@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1539044667 source:c:\users\alumno\desktop\moya.agustin.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539044657 source:c:\users\alumno\desktop\moya.agustin.1g\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539044657 c:\users\alumno\desktop\moya.agustin.1g\abm.h
+
+1539046318 source:d:\moya.agustin.1g\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539044657 d:\moya.agustin.1g\abm.h
+
+1539044667 source:d:\moya.agustin.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539299773 source:c:\users\agusf\desktop\nueva carpeta (2)\programacion-cuatri-actual-master\moya.agustin.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539299512 c:\users\agusf\desktop\nueva carpeta (2)\programacion-cuatri-actual-master\moya.agustin.1g\abm.h
+
+1539302023 source:c:\users\agusf\desktop\nueva carpeta (2)\programacion-cuatri-actual-master\moya.agustin.1g\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539304541 source:c:\users\agusf\desktop\programacion-cuatri-actual-master\moya.agustin.1g\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539304541 c:\users\agusf\desktop\programacion-cuatri-actual-master\moya.agustin.1g\abm.h
+
+1539304541 source:c:\users\agusf\desktop\programacion-cuatri-actual-master\moya.agustin.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539392212 source:c:\users\alumno\downloads\programacion-cuatri-actual-master\moya.agustin.1g\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1539387853 c:\users\alumno\downloads\programacion-cuatri-actual-master\moya.agustin.1g\abm.h
+
+1539391945 source:c:\users\alumno\downloads\programacion-cuatri-actual-master\moya.agustin.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
